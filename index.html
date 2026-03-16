@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Government Polytechnic Barauni ka exclusive digital portal. Campus map dekhein aur gallery se photos download karein. Made by Himanshu Kumar (Civil Engineering).">
+    <title>Government Polytechnic Barauni - Campus Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/dist/css/fontawesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(0, 33, 71, 0.85), rgba(0, 33, 71, 0.85)), 
+                        url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .img-container img {
+            transition: transform 0.5s ease;
+        }
+        .img-container:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold text-blue-900 uppercase">GP Barauni</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="hover:text-blue-600 px-3 py-2 font-medium">Home</a>
+                        <a href="#map" class="hover:text-blue-600 px-3 py-2 font-medium">Campus Map</a>
+                        <a href="#gallery" class="hover:text-blue-600 px-3 py-2 font-medium">Gallery</a>
+                        <a href="#about" class="bg-blue-900 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition">About Creator</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient h-[65vh] flex items-center justify-center text-center text-white px-4">
+        <div class="max-w-3xl">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Government Polytechnic Barauni</h1>
+            <!-- Main Description -->
+            <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
+                GP Barauni ke yaadon ka ek sangrah! Ek alumnus dwara design kiya gaya yeh portal campus map aur images ke zariye humare college ki virasat ko darshata hai. Yahan se aap college ki tasveerein download kar sakte hain aur campus layout ko samajh sakte hain.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#map" class="bg-white text-blue-900 font-bold py-3 px-8 rounded-full transition hover:bg-gray-100">View Campus Map</a>
+                <a href="#gallery" class="bg-yellow-500 hover:bg-yellow-400 text-blue-900 font-bold py-3 px-8 rounded-full transition">Explore Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Description & Section -->
+    <section id="map" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-blue-900 mb-4">Campus Blueprint</h2>
+            <p class="max-w-2xl mx-auto text-gray-600 mb-12">College ke har kone ko asani se dhundhne ke liye ye map Himanshu Kumar dwara taiyar kiya gaya hai. Aap isse apne device mein save kar sakte hain.</p>
+            
+            <div class="glass-card rounded-2xl overflow-hidden shadow-2xl max-w-4xl mx-auto border border-gray-200">
+                <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80" alt="Campus Map" class="w-full h-auto">
+                <div class="p-6 bg-gray-50 flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <p class="text-gray-700 font-medium italic">"Mapping the future of GP Barauni"</p>
+                    <button onclick="downloadImage('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80', 'GPB_Campus_Map.jpg')" class="bg-blue-900 text-white px-8 py-3 rounded-xl hover:bg-blue-700 transition flex items-center gap-2">
+                        <span>⬇️ Download High-Res Map</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900">Digital Gallery</h2>
+                <div class="h-1 w-20 bg-yellow-500 mx-auto mt-4"></div>
+            </div>
+
+            <div id="image-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- JS will inject images here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Creator Credits -->
+    <footer id="about" class="bg-blue-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-12">
+                <h3 class="text-3xl font-bold mb-4">About This Project</h3>
+                <p class="max-w-2xl mx-auto text-blue-200">
+                    Yeh website ek chhota sa yogdaan hai Government Polytechnic Barauni ke liye, taaki naye students aur alumni hamesha campus se jude rahein.
+                </p>
+            </div>
+            
+            <div class="inline-block relative">
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-md relative z-10">
+                    <p class="text-yellow-400 font-bold tracking-widest text-sm mb-4 uppercase">Project Designed By</p>
+                    <h4 class="text-3xl font-bold mb-1">Himanshu Kumar</h4>
+                    <p class="text-xl text-blue-200 mb-4">Civil Engineering Branch</p>
+                    <div class="bg-blue-800/50 py-2 px-6 rounded-full inline-block">
+                        <span class="text-white font-medium">Session: 2022-2025</span>
+                    </div>
+                    <p class="mt-6 text-blue-300 text-sm italic">Alumnus of GP Barauni</p>
+                </div>
+                <!-- Background Decoration -->
+                <div class="absolute -top-4 -right-4 w-24 h-24 bg-yellow-500/20 rounded-full blur-2xl"></div>
+                <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-blue-500/20 rounded-full blur-2xl"></div>
+            </div>
+            
+            <p class="mt-16 text-blue-400 text-sm">&copy; 2024 GP Barauni Community Portal | Built for the Students, by a Student.</p>
+        </div>
+    </footer>
+
+    <script>
+        const galleryImages = [
+            { url: 'https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&w=800&q=80' },
+            { url: 'https://images.unsplash.com/photo-152305085306e-8c44c212239f?auto=format&fit=crop&w=800&q=80' },
+            { url: 'https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=800&q=80' },
+            { url: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80' },
+            { url: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80' },
+            { url: 'https://images.unsplash.com/photo-1576495199011-eb94736df057?auto=format&fit=crop&w=800&q=80' }
+        ];
+
+        const grid = document.getElementById('image-grid');
+
+        function renderGallery() {
+            galleryImages.forEach((img, index) => {
+                const card = document.createElement('div');
+                card.className = 'group relative img-container rounded-2xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-200';
+                card.innerHTML = `
+                    <img src="${img.url}" alt="Campus Photo" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-blue-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                         <button onclick="downloadImage('${img.url}', 'GPB_Campus_Photo_${index + 1}.jpg')" class="bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-full shadow-xl transform translate-y-8 group-hover:translate-y-0 transition duration-300">
+                            Download Photo
+                         </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        async function downloadImage(url, filename) {
+            try {
+                const response = await fetch(url);
+                const blob = await response.blob();
+                const blobUrl = window.URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = blobUrl;
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                window.URL.revokeObjectURL(blobUrl);
+            } catch (error) {
+                const link = document.createElement('a');
+                link.href = url;
+                link.target = "_blank";
+                link.download = filename;
+                link.click();
+            }
+        }
+
+        window.onload = renderGallery;
+    </script>
+</body>
+</html>
